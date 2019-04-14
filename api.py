@@ -15,13 +15,15 @@ def main():
     driver = None
     while driver is None:
         try:
-            driver = webdriver.Chrome(options=options)
+            driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=options)
         except Exception as ex:
             print(ex)
+    print(">> getting website")
     driver.get("https://coinmarketcap.com/all/views/all/")
     conn = sqlite3.connect("db.sqlite3")
     c = conn.cursor()
     while True:
+        print(">> got website")
         query_time = time.time()
         WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "total-marketcap")))
         table_el = driver.find_element_by_tag_name("tbody")
@@ -84,6 +86,7 @@ def main():
             c.execute("""SELECT * FROM _{}""".format(int(index)))
             print(c.fetchall())
             conn.commit()
+        print(">> getting website")
         driver.refresh()
 
 
