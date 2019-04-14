@@ -1,0 +1,36 @@
+{
+  "base_url": "https://coinmarketcap.com/currencies/",
+  "currency_names": [
+    "bitcoin",
+    "ethereum",
+    "ripple",
+    "litecoin",
+    "eos",
+    "stellar",
+    "cardano",
+    "tron",
+    "monero",
+    "dash",
+    "iota",
+    "neo",
+    "ethereum-classic"
+  ],
+  "endpoint": "/#markets",
+  "proxies": [
+    {
+      "http": "http://191.241.170.151:8080"
+    },
+    {
+      "http": "http://177.38.33.234:3128"
+    },
+    {
+      "http": "http://79.155.65.95:53281"
+    },
+    {
+      "http": "http://177.184.206.117:8080"
+    },
+    {
+      "http": "http://139.59.53.105:8080"
+    }
+  ]
+}
